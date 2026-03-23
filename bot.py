@@ -41,7 +41,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     
     # --- GitHub Pages Link ကို ဒီနေရာမှာ ပြင်ပါ ---
     # ဥပမာ: https://yourname.github.io/your-repo/birthday.html
-    url = "https://unhit88.github.io/my-surprise-bot/"
+    url = "https://unhit88.github.io/my-surprise-bot/birthday.html"
     
     keyboard = InlineKeyboardMarkup([
         [InlineKeyboardButton("❤️ Open Surprise ❤️", web_app=WebAppInfo(url=url))]
