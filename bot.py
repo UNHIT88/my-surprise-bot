@@ -29,7 +29,7 @@ client = openai.OpenAI(
 def generate_content(prompt: str) -> str:
     try:
         response = client.chat.completions.create(
-            model="gemini-1.5-flash",
+            model="gemini-2.5-flash",
             messages=[{"role": "user", "content": prompt}]
         )
         return response.choices[0].message.content
