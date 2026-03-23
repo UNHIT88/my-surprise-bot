@@ -48,7 +48,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     ])
     
     await update.message.reply_text(
-        f"Hello {user_name}! ကျွန်တော့်မှာ သင့်အတွက် surprise လေးတစ်ခု ရှိပါတယ်။ ❤️\n\nအောက်က ခလုတ်လေးကို နှိပ်ကြည့်လိုက်ပါဦး။",
+        f"Hello {user_name}! surprise လေးတစ်ခု ရှိတယ်။ ❤️\n\nအောက်က ခလုတ်လေးကို နှိပ်ကြည့်။",
         reply_markup=keyboard
     )
 
