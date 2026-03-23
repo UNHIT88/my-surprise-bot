@@ -16,7 +16,8 @@ def health_check():
     return "Surprise Bot is Online!", 200
 
 def run_web_server():
-    port = int(os.environ.get("PORT", 8000))
+   def run_web_server():
+    port = int(os.environ.get("PORT", 8080)) # 8000 အစား 8080 ပြောင်းပါ
     web_app.run(host='0.0.0.0', port=port)
 
 # --- AICC API Configuration ---
