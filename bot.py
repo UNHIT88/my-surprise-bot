@@ -17,7 +17,7 @@ def health_check():
 
 def run_web_server():
    def run_web_server():
-    port = int(os.environ.get("PORT", 8080)) # 8000 အစား 8080 ပြောင်းပါ
+    port = int(os.environ.get("PORT", 8080)) 
     web_app.run(host='0.0.0.0', port=port)
 
 # --- AICC API Configuration ---
