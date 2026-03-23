@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise for You</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            margin: 0; padding: 0;
+            display: flex; justify-content: center; align-items: center;
+            height: 100vh;
+            background-color: #fce4ec; /* ပန်းရောင်နုနု နောက်ခံ */
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+      
+        .heart {
+            position: absolute;
+            width: 100px; height: 100px;
+            background-color: #ff4081;
+            transform: rotate(-45deg);
+            animation: beat 1s infinite;
+        }
+        .heart::before, .heart::after {
+            content: "";
+            position: absolute;
+            width: 100px; height: 100px;
+            background-color: #ff4081;
+            border-radius: 50%;
+        }
+        .heart::before { top: -50px; left: 0; }
+        .heart::after { top: 0; left: 50px; }
+
+        @keyframes beat {
+            0% { transform: scale(1) rotate(-45deg); }
+            50% { transform: scale(1.2) rotate(-45deg); }
+            100% { transform: scale(1) rotate(-45deg); }
+        }
+
+      
+        .name-text {
+            position: absolute;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeIn 2s ease-in-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        
+        .petal {
+            position: absolute;
+            width: 15px; height: 15px;
+            background-color: #ff80ab;
+            border-radius: 50% 0 50% 50%;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0deg); }
+            100% { transform: translateY(110vh) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="heart"></div>
+    
+    <div class="name-text">မကရင်! 💖</div>
+
+    <script>
+        let tg = window.Telegram.WebApp;
+        tg.expand(); // 
+        tg.ready();
+
+       
+        for (let i = 0; i < 30; i++) {
+            let petal = document.createElement('div');
+            petal.className = 'petal';
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            petal.style.opacity = Math.random();
+            document.body.appendChild(petal);
+        }
+    </script>
+</body>
+</html>
